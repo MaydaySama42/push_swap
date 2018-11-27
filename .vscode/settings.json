@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"sorting.h": "c",
+		"stdlib.h": "c",
+		"checker.h": "c",
+		"error.h": "c",
+		"time.h": "c",
+		"generator.h": "c",
+		"unistd.h": "c"
+	}
+}
