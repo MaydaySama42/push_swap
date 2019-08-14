@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 07:21:05 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/20 06:32:20 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/19 20:37:00 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int ac, char **av)
 	pile_b = NULL;
 	if (parse_list(pile_a) == -1)
 		return (usage());
-	insertion_sort(&pile_a, &pile_b);
+	little_sort(&pile_a, &pile_b);
+	ft_printfast("OK\n");
 	return (0);
 }

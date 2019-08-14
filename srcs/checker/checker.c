@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:47:21 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/20 06:54:16 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/19 21:17:15 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,14 @@ int		main(int ac, char **av)
 	while (42)
 	{
 		get_next_line(0, &line);
-		//system("clear");
-		//print_two_list(pile_a, pile_b, size);
+		system("clear");
+		print_two_list(pile_a, pile_b, size);
 		ft_printfast("\x1b[36mstroke number: %d\x1b[0m\n", coup);
-		for (int i = 0;i < SPEED_LOW;i++)
+		for (int i = 0;i < SPEED_HIGH;i++)
 			;
 		if (interpret_action(line, &pile_a, &pile_b) == 1)
 			break ;
 		coup++;
-		//system("clear");
-		print_two_list(pile_a, pile_b, size);
-		ft_printfast("\x1b[36mstroke number: %d\x1b[0m\n", coup);
 	}
 	free(line);
 	return (0);

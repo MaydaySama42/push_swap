@@ -6,7 +6,7 @@
 #    By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/16 13:54:48 by mdalil            #+#    #+#              #
-#    Updated: 2018/11/19 06:48:54 by mdalil           ###   ########.fr        #
+#    Updated: 2018/12/19 20:36:24 by mdalil           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME_CHECKER		=	checker
 NAME_PUSH_SWAP		=	push_swap
 NAME_GENERATOR		=	generator
 
-CFLAGS				=	-Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS				=	-Wall -Wextra -Werror -g3 -fsanitize=address
 
 INCLUDE_LIBFT		=	../libft/includes
 INCLUDE				=	./includes/
@@ -37,9 +37,9 @@ SRC_PARSING_PATH	=	./srcs/parsing/
 SRC_PUSH_SWAP_FILE	=	push_swap.c
 SRC_PUSH_SWAP_PATH	=	./srcs/push_swap/
 
-SRC_SORTING_FILE	=	insertion_sort.c\
-						list_utils.c\
+SRC_SORTING_FILE	=	list_utils.c\
 						list.c\
+						little_sort.c\
 						push.c\
 						rotate_reverse.c\
 						rotate.c\

@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:47:34 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/18 00:22:40 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/02 19:33:36 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,13 @@ void	print_list(t_list *list)
 	t_list	*tmp;
 
 	tmp = list;
+	ft_printfast("-------\n");
 	while (tmp)
 	{
 		ft_printfast("%d\n", tmp->nb);
 		tmp = tmp->next;
 	}
+	ft_printfast("-------\n");
 }
 
 void	print_two_list(t_list *pile_a, t_list *pile_b, int size)

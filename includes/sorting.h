@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 07:41:04 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/19 07:30:23 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/19 20:15:42 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void				add_from_tab(t_list **list, char *str);
 **					list utils
 */
 int					get_list_size(t_list *list);
+t_list				*get_list_at(t_list *pile, int index);
 /*
 **					pile display
 */
@@ -64,15 +65,16 @@ void				rrr(t_list **pile_a, t_list **pile_b);
 /*
 **					sort
 */
-void				insertion_sort(t_list **pile_a, t_list **pile_b);
+void				little_sort(t_list **pile_a, t_list **pile_b);
 void				selection_sort(t_list **pile_a, t_list **pile_b);
+
 /*
 **					sort utils
 */
 int					check_is_sort(t_list *pile_a, t_list *pile_b);
-t_list				*get_min_value(t_list *pile, t_list *copy);
+t_list				*get_min_value(t_list *pile);
+t_list				*get_max_value(t_list *pile);
 int					get_direction(t_list *pile, t_list *min);
 void				move_elem_rotate(t_list **pile, t_list *elem);
-t_list				*get_elem_by_value(t_list *pile, int nb);
 
 #endif

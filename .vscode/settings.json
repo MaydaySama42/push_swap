@@ -6,6 +6,7 @@
 		"error.h": "c",
 		"time.h": "c",
 		"generator.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"limits.h": "c"
 	}
 }

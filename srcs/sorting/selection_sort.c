@@ -6,11 +6,12 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 04:47:14 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/19 06:50:21 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/19 20:36:38 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sorting.h"
+#include "libft.h"
 #include <stdlib.h>
 
 void	selection_sort(t_list **pile_a, t_list **pile_b)
@@ -19,7 +20,7 @@ void	selection_sort(t_list **pile_a, t_list **pile_b)
 	int		sens;
 
 	sens = 0;
-	while ((min = get_min_value(*pile_a, NULL)))
+	while ((min = get_min_value(*pile_a)))
 	{
 		move_elem_rotate(pile_a, min);
 		pb(pile_b, pile_a);

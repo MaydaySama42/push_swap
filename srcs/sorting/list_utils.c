@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 05:34:21 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/14 07:48:25 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/05 01:21:32 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,19 @@ int		get_list_size(t_list *list)
 		i++;
 	}
 	return (i);
+}
+
+t_list	*get_list_at(t_list *pile, int index)
+{
+	t_list	*tmp;
+
+	tmp = pile;
+	while (tmp)
+	{
+		if (index == 0)
+			return (tmp);
+		index--;
+		tmp = tmp->next;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 04:41:59 by mdalil            #+#    #+#             */
-/*   Updated: 2018/11/20 06:32:54 by mdalil           ###   ########.fr       */
+/*   Updated: 2018/12/19 20:29:27 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-int			value_different_from_copy(t_list *elem, t_list *copy)
-{
-	t_list	*tmp;
-
-	tmp = copy;
-	while (tmp)
-	{
-		if (tmp->nb == elem->nb)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-
-t_list		*get_min_value(t_list *pile, t_list *copy)
+t_list		*get_min_value(t_list *pile)
 {
 	t_list	*tmp;
 	t_list	*ret;
@@ -42,9 +28,31 @@ t_list		*get_min_value(t_list *pile, t_list *copy)
 	min_value = INT_MAX;
 	while (tmp)
 	{
-		if (tmp->nb < min_value && !value_different_from_copy(tmp, copy))
+		if (tmp->nb < min_value)
 		{
 			min_value = tmp->nb;
+			ret = tmp;
+		}
+		tmp = tmp->next;
+	}
+	return (ret);
+}
+
+t_list		*get_max_value(t_list *pile)
+{
+	t_list	*tmp;
+	t_list	*ret;
+	int		max_value;
+
+	if (!(tmp = pile))
+		return (NULL);
+	ret = NULL;
+	max_value = INT_MIN;
+	while (tmp)
+	{
+		if (tmp->nb > max_value)
+		{
+			max_value = tmp->nb;
 			ret = tmp;
 		}
 		tmp = tmp->next;
@@ -68,7 +76,7 @@ int		get_direction(t_list *pile, t_list *min)
 		tmp = tmp->next;
 		i++;
 	}
-	if (i < size / 2)
+	if (i <= size / 2)
 		return (SENS_GO_UP);
 	else
 		return (SENS_GO_DOWN);
@@ -89,20 +97,6 @@ void	move_elem_rotate(t_list **pile, t_list *elem)
 	}
 }
 
-t_list	*get_elem_by_value(t_list *pile, int nb)
-{
-	t_list	*tmp;
-
-	tmp = pile;
-	while (tmp)
-	{
-		if (tmp->nb == nb)
-			return (tmp);
-		tmp = tmp->next;
-	}
-	return (NULL);
-}
-
 int		check_is_sort(t_list *pile_a, t_list *pile_b)
 {
 	t_list	*tmp;
@@ -117,7 +111,7 @@ int		check_is_sort(t_list *pile_a, t_list *pile_b)
 		value = tmp->nb;
 		tmp = tmp->next;
 	}
-	if (get_list_size(pile_b) != 0)
+	if (pile_b && get_list_size(pile_b) != 0)
 		return (-1);
 	return (0);
 }
